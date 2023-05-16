@@ -31,6 +31,9 @@ jobs:
             filename: site.zip
         - name: Create GitHub release
           uses: actions/create-release@v1
+          permissions:
+            contents: write
+            pull-requests: read
           env: 
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           with:
