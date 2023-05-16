@@ -29,11 +29,6 @@ jobs:
           uses: thedoctor0/zip-release@0.7.1
           with:
             filename: site.zip
-        - name: Create GitHub release
-          uses: marvinpinto/action-automatic-releases@latest
-          with:
-            repo_token: "${{ secrets.GITHUB_TOKEN }}"
-            prerelease: false
           
           
         
