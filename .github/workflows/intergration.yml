@@ -30,15 +30,11 @@ jobs:
           with:
             filename: site.zip
         - name: Create GitHub release
-          uses: actions/create-release@v1
-          permissions:
-            contents: write
-            pull-requests: read
-          env: 
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          uses: "marvinpinto/action-automatic-releases@latest"
           with:
-            tag_name: ${{  github.run_number }}
-            release_name: Release ${{  github.run_number }}
+            repo_token: ${{ secrets.GITHUB_TOKEN }}
+            automatic_release_tag: "latest"
+            prerelease: true
           
           
         
